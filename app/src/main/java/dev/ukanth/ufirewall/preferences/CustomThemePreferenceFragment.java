@@ -1,5 +1,7 @@
 package dev.ukanth.ufirewall.preferences;
 
+import dev.ukanth.ufirewall.BuildConfig;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -134,7 +136,7 @@ public class CustomThemePreferenceFragment extends PreferenceFragment implements
     private void broadcastThemeRefresh() {
         Context context = resolveContext();
         if (context != null) {
-            Intent broadcastIntent = new Intent("dev.ukanth.ufirewall.theme.REFRESH");
+            Intent broadcastIntent = new Intent(BuildConfig.APPLICATION_ID + ".theme.REFRESH");
             context.sendBroadcast(broadcastIntent);
         }
     }

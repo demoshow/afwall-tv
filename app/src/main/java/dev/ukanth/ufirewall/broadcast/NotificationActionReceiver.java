@@ -1,5 +1,7 @@
 package dev.ukanth.ufirewall.broadcast;
 
+import dev.ukanth.ufirewall.BuildConfig;
+
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -15,8 +17,8 @@ import dev.ukanth.ufirewall.util.Notifications;
  */
 public class NotificationActionReceiver extends BroadcastReceiver {
 
-    private static final String ACTION_MUTE = "dev.ukanth.ufirewall.notification.MUTE_APP";
-    private static final String ACTION_CLEAR_BLOCKED = "dev.ukanth.ufirewall.notification.CLEAR_BLOCKED";
+    private static final String ACTION_MUTE = BuildConfig.APPLICATION_ID + ".notification.MUTE_APP";
+    private static final String ACTION_CLEAR_BLOCKED = BuildConfig.APPLICATION_ID + ".notification.CLEAR_BLOCKED";
     private static final String EXTRA_UID = "uid";
 
     public static PendingIntent muteIntent(Context ctx, int uid) {

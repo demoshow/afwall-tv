@@ -22,6 +22,8 @@
 
 package dev.ukanth.ufirewall.service;
 
+import dev.ukanth.ufirewall.BuildConfig;
+
 import static android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE;
 import static dev.ukanth.ufirewall.util.G.ctx;
 
@@ -85,8 +87,8 @@ public class LogService extends Service {
     public static String logPath;
     public static final int QUEUE_NUM = 40;
 
-    public static final String ACTION_GRACEFUL_SHUTDOWN = "dev.ukanth.ufirewall.GRACEFUL_SHUTDOWN";
-    public static final String ACTION_CHANGE_LOG_TARGET = "dev.ukanth.ufirewall.CHANGE_LOG_TARGET";
+    public static final String ACTION_GRACEFUL_SHUTDOWN = BuildConfig.APPLICATION_ID + ".GRACEFUL_SHUTDOWN";
+    public static final String ACTION_CHANGE_LOG_TARGET = BuildConfig.APPLICATION_ID + ".CHANGE_LOG_TARGET";
     public static final String EXTRA_NEW_LOG_TARGET = "new_log_target";
 
     private static final int LOG_FLUSH_BATCH_SIZE = 50;

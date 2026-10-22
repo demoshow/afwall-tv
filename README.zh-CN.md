@@ -93,8 +93,9 @@ cd afwall-tv
 python3 scripts/verify_tv_resources.py
 ```
 
-Release 默认生成未签名 APK，签名凭据应保存在仓库之外。为兼容已有安装，保留
-应用 ID `local.cm311.afwalltv`，但实现并不绑定某款电视盒子。首次构建需要下载
+Release 默认生成未签名 APK，签名凭据应保存在仓库之外。应用 ID 为
+`io.github.demoshow.afwalltv`，与此前本地 TV 版本和官方 AFWall+ 分开安装，
+不会自动迁移旧应用数据；实现不绑定某款电视盒子。首次构建需要下载
 依赖；常规构建使用上游原生工具，相关源码、修改和授权见
 [第三方说明](THIRD_PARTY.md)，不声称原生工具已实现位级可复现。
 

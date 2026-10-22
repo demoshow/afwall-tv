@@ -6,7 +6,9 @@ android {
 
     defaultConfig {
         //applicationId "dev.ukanth.ufirewall.donate"
-        applicationId "local.cm311.afwalltv"
+        applicationId "io.github.demoshow.afwalltv"
+        // Resource XML is not manifest-placeholder expanded (e.g. static shortcuts).
+        resValue 'string', 'tv_application_id', applicationId
         minSdkVersion 24
         targetSdk 34
         versionCode 20261022

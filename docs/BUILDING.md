@@ -35,8 +35,10 @@ installed SDK AAPT2 explicitly, for example:
   -Pandroid.aapt2FromMavenOverride="$ANDROID_HOME/build-tools/34.0.0/aapt2"
 ```
 
-The project preserves the existing `local.cm311.afwalltv` application ID for
-configuration/update compatibility; it is not tied to a particular board.
+The application ID is `io.github.demoshow.afwalltv`; the Java namespace remains
+`dev.ukanth.ufirewall` to ease upstream merging. This installs separately from
+previous local TV builds and upstream AFWall+, without automatic data migration.
+It is not tied to a particular board. See [APP_ID.md](APP_ID.md) for scope and exceptions.
 `minSdk` is 24 (Android 7.0), and `targetSdk` is 34. This minimum is not proof of
 correct kernel filtering or native-tool operation on every Android 7 device.
 The ARM, ARM64, and x86 native tool resources are inherited from upstream;

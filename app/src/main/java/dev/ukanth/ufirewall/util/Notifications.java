@@ -1,5 +1,7 @@
 package dev.ukanth.ufirewall.util;
 
+import dev.ukanth.ufirewall.BuildConfig;
+
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -54,7 +56,7 @@ public final class Notifications {
     private static final int ID_NEW_APP = 100;
     private static final int ID_NEW_APP_SUMMARY = 101;
     public static final int ID_BLOCKED = 109;
-    private static final String GROUP_NEW_APPS = "dev.ukanth.ufirewall.NEW_APPS";
+    private static final String GROUP_NEW_APPS = BuildConfig.APPLICATION_ID + ".NEW_APPS";
 
     // at most one update of the blocked-connections notification per interval
     private static final long BLOCKED_UPDATE_INTERVAL_MS = 3000;

@@ -1,5 +1,7 @@
 package dev.ukanth.ufirewall.widget;
 
+import dev.ukanth.ufirewall.BuildConfig;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -33,7 +35,7 @@ import dev.ukanth.ufirewall.util.SecurityUtil;
  */
 public class WidgetActionActivity extends Activity {
 
-    public static final String EXTRA_ACTION = "dev.ukanth.ufirewall.widget.ACTION";
+    public static final String EXTRA_ACTION = BuildConfig.APPLICATION_ID + ".widget.ACTION";
     public static final String ACTION_TOGGLE = "toggle";
     public static final String ACTION_PROFILE = "profile";
     public static final String ACTION_APP = "app";

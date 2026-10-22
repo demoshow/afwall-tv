@@ -363,7 +363,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @SuppressLint("UnspecifiedRegisterReceiverFlag")
     private void registerUIRefresh() {
-        IntentFilter filter = new IntentFilter("dev.ukanth.ufirewall.ui.CHECKREFRESH");
+        IntentFilter filter = new IntentFilter(BuildConfig.APPLICATION_ID + ".ui.CHECKREFRESH");
         uiRefreshReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -387,7 +387,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @SuppressLint("UnspecifiedRegisterReceiverFlag")
     private void registerThemeIntent() {
 
-        IntentFilter filter = new IntentFilter("dev.ukanth.ufirewall.theme.REFRESH");
+        IntentFilter filter = new IntentFilter(BuildConfig.APPLICATION_ID + ".theme.REFRESH");
         themeRefreshReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {

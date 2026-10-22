@@ -106,8 +106,9 @@ python3 scripts/verify_tv_resources.py
 ```
 
 The release APK is unsigned by default. Keep signing credentials outside the
-repository. The existing application ID, `local.cm311.afwalltv`, is retained for
-update compatibility; the project is not tied to one TV box model. First builds
+repository. The application ID is `io.github.demoshow.afwalltv`; it installs
+separately from previous local TV builds and upstream AFWall+. Existing app data
+is not automatically migrated. The project is not tied to one TV box model. First builds
 download dependencies. Native helpers inherited from upstream are included;
 their sources, modifications and licenses are documented in
 [THIRD_PARTY.md](THIRD_PARTY.md). No claim of byte-reproducible native builds is made.

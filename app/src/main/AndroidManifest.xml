@@ -280,7 +280,7 @@
 
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="dev.ukanth.ufirewall.intent.action.STATUS_CHANGED" />
+                <action android:name="${applicationId}.intent.action.STATUS_CHANGED" />
             </intent-filter>
         </receiver>
         <receiver
@@ -294,7 +294,7 @@
 
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="dev.ukanth.ufirewall.intent.action.STATUS_CHANGED" />
+                <action android:name="${applicationId}.intent.action.STATUS_CHANGED" />
             </intent-filter>
         </receiver>
         <receiver
@@ -308,7 +308,7 @@
 
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="dev.ukanth.ufirewall.intent.action.STATUS_CHANGED" />
+                <action android:name="${applicationId}.intent.action.STATUS_CHANGED" />
             </intent-filter>
         </receiver>
 
