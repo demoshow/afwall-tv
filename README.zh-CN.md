@@ -26,6 +26,14 @@
 修改选档只是草稿，明确确认应用并授予 root 后才生效；保留既有高级模式、脚本、
 直接规则和 Tor 设置。
 
+### 截图——等待所有者提供真实画面
+
+截图位置预留在 [docs/images/](docs/images/README.md)。以下引用暂以注释保留，
+收到真实截图后再启用；不会生成假图或把上游截图作为本 TV 界面展示。
+
+<!-- ![AFWall+ TV——英文应用策略列表](docs/images/tv-home-en.png) -->
+<!-- ![AFWall+ TV——中文应用策略列表](docs/images/tv-home-zh-CN.png) -->
+
 ## 三种策略与限制
 
 | 策略 | 对应用直接流量的预期处理 |
@@ -82,3 +90,6 @@ Release 默认未签名，私有签名材料由构建者在仓库之外管理。
 GNU GPL-3.0；原文件允许时可使用后续版本。第三方组件保持各自授权，详见
 [LICENSE](LICENSE)、[NOTICE.md](NOTICE.md)及[THIRD_PARTY.md](THIRD_PARTY.md)。
 新 Git 历史不取消署名与完整对应源码义务。
+
+建议 GitHub topics（由所有者在网页手动设置）：`android-tv`、`firewall`、
+`iptables`、`afwall`、`root`、`android`。

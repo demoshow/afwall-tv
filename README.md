@@ -28,6 +28,15 @@ possible. [Upstream documentation](https://github.com/ukanth/afwall/wiki) ·
 Editing creates a draft. Only an explicit apply confirmation and root grant
 activate rules. Advanced mode, scripts, direct rules and Tor settings are retained.
 
+### Screenshots — awaiting owner-provided captures
+
+Real screenshots will be added under [docs/images/](docs/images/README.md).
+References below are intentionally commented out until the owner supplies the
+files; no generated mockup or upstream screenshot is presented as this TV UI.
+
+<!-- ![AFWall+ TV — English app policy list](docs/images/tv-home-en.png) -->
+<!-- ![AFWall+ TV — Chinese app policy list](docs/images/tv-home-zh-CN.png) -->
+
 ## Policies and limitations
 
 | Policy | Intended direct app traffic |
@@ -94,3 +103,6 @@ GNU GPL-3.0, with later-version permission where granted by original file notice
 Third-party components retain their own terms. See [LICENSE](LICENSE),
 [NOTICE.md](NOTICE.md) and [THIRD_PARTY.md](THIRD_PARTY.md). A fresh Git history does
 not remove attribution or corresponding-source obligations.
+
+Suggested GitHub topics (owner sets these manually): `android-tv`, `firewall`,
+`iptables`, `afwall`, `root`, `android`.
