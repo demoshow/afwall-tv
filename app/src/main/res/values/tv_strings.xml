@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TV additions, GPL-3.0-or-later. Modified 2026-10-22. -->
+<resources>
+    <string name="tv_title">AFWall+ TV · App network control</string>
+    <string name="tv_initial_status">Loading apps; the firewall will not be enabled automatically</string>
+    <string name="tv_apply">Apply rules</string>
+    <string name="tv_disable">Disable firewall</string>
+    <string name="tv_inspect">Inspect status</string>
+    <string name="tv_advanced">Advanced</string>
+    <string name="tv_draft_title">Unapplied changes</string>
+    <string name="tv_draft_body">Apply your changes first, or press Back to discard them. The advanced interface retains the upstream features.</string>
+    <string name="tv_navigation">↑↓ Select an app · OK changes its policy · Apply rules to activate changes</string>
+    <string name="tv_footer">Core UIDs are protected; apps sharing a UID share a policy. LAN includes private ranges and discovery traffic. New apps follow the advanced mode default.</string>
+    <string name="tv_core_badge">Core protected</string>
+    <string name="tv_loading">Loading app list…</string>
+    <string name="tv_load_failed">Could not load apps</string>
+    <string name="tv_core_title">Core UID protection</string>
+    <string name="tv_core_body">This UID is used by Android or maintenance services and cannot be blocked in the TV interface. Do not block the entire system UID 1000 to restrict one service.</string>
+    <string name="tv_cancel">Cancel</string>
+    <string name="tv_help">Help</string>
+    <string name="tv_modes_title">Network policies</string>
+    <string name="tv_modes_body">Unrestricted: no additional app restriction.\nLAN only: allows the AFWall+ LAN and discovery rules while blocking Wi-Fi/Ethernet internet, mobile data, and VPN traffic.\nBlocked: denies direct LAN/WAN traffic, subject to the engine’s loopback, DNS, and system-proxy exceptions.\nApps sharing a UID share a policy. Root-capable software can change firewall rules.</string>
+    <string name="tv_ok">OK</string>
+    <string name="tv_apply_title">Apply rules and enable the firewall?</string>
+    <string name="tv_apply_body">Grant this app root access in Magisk or your root manager. Rules are applied by the AFWall+ engine for IPv4 and IPv6.\n\nStart with one nonessential app. Core UIDs stay allowed, and the advanced allowlist/blocklist mode is preserved. Do not enable upstream AFWall+ or another firewall manager at the same time. Boot restoration follows upstream behavior.</string>
+    <string name="tv_apply_confirm">Apply and enable</string>
+    <string name="tv_custom_warning">\n\nSaved scripts or active advanced rules are configured. They are preserved and processed by the upstream engine and may override the three policies. Cancel and inspect Advanced if needed.</string>
+    <string name="tv_applying">Waiting for root access and applying rules. Please stay on this screen…</string>
+    <string name="tv_root_denied">Root access was not granted; rules were not applied</string>
+    <string name="tv_binary_failed">Could not prepare the firewall tools</string>
+    <string name="tv_applied_title">Rules applied</string>
+    <string name="tv_applied_body">The AFWall+ engine reported success. Verify LAN/WAN filtering on this device. Use Disable firewall to remove this app’s rules.</string>
+    <string name="tv_not_applied">Rules not applied</string>
+    <string name="tv_apply_failed">Could not apply rules</string>
+    <string name="tv_old_rules">previous rules</string>
+    <string name="tv_disabled_state">disabled state</string>
+    <string name="tv_engine_success">engine reported success</string>
+    <string name="tv_recovery_failed">FAILED. Rules may be incomplete; disable the firewall and inspect the state.</string>
+    <string name="tv_disable_title">Disable this app’s firewall?</string>
+    <string name="tv_disable_body">AFWall+ removes its own rules, not the entire system firewall. Saved app policies are retained.</string>
+    <string name="tv_disable_confirm">Disable</string>
+    <string name="tv_disabling">Disabling firewall…</string>
+    <string name="tv_disabled_title">Firewall disabled</string>
+    <string name="tv_disable_failed">Could not disable the firewall</string>
+    <string name="tv_disabled_body">The rule engine reported that this app’s rules were removed.</string>
+    <string name="tv_inspecting">Inspecting root and firewall state (read-only)…</string>
+    <string name="tv_inspect_title">Read-only status inspection</string>
+    <string name="tv_inspect_failed">Inspection failed</string>
+    <string name="tv_busy">An operation is in progress. Please wait.</string>
+    <string name="tv_discard_title">Discard unapplied changes?</string>
+    <string name="tv_discard">Discard</string>
+    <string name="tv_keep_editing">Keep editing</string>
+    <string name="tv_app_name">AFWall+ TV</string>
+    <string name="tv_enabled">Firewall: enabled</string>
+    <string name="tv_disabled">Firewall: disabled</string>
+    <string name="tv_status">%1$s · %2$d UID groups%3$s%4$s</string>
+    <string name="tv_dirty_suffix"> · Unapplied changes</string>
+    <string name="tv_ipv6_on"> · IPv4 + IPv6</string>
+    <string name="tv_ipv6_off"> · IPv6 off (enabled on the next apply)</string>
+    <string name="tv_shared_uid">Shared UID (%1$d packages) · %2$s</string>
+    <string name="tv_custom_check_failed">\n\nAdvanced-rule inspection did not complete: %1$s. Existing rules are preserved and may affect the policies. Cancel and inspect Advanced if unsure.</string>
+    <string name="tv_rollback">Original exit code: %1$d\nRestore %2$s: %3$s\n%4$s</string>
+    <string name="tv_disable_error">Exit code %1$d. Inspect advanced rules and logs.</string>
+    <string-array name="tv_modes">
+        <item>Unrestricted</item>
+        <item>LAN only</item>
+        <item>Blocked</item>
+        <item>Custom (advanced rules)</item>
+    </string-array>
+</resources>

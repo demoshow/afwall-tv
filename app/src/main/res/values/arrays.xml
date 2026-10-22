@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <!-- each language in its own name; the codes are language tags (AppLanguage), keep them in
+         the same order and in sync with xml/locales_config.xml -->
+    <string-array name="supported_languages" translatable="false">
+        <item>@string/language_system</item>
+        <item>English</item>
+        <item>Asturianu</item>
+        <item>Azərbaycan dili</item>
+        <item>Bahasa Indonesia</item>
+        <item>Bahasa Melayu</item>
+        <item>Bosanski</item>
+        <item>Català</item>
+        <item>Čeština</item>
+        <item>Dansk</item>
+        <item>Deutsch</item>
+        <item>Español</item>
+        <item>Euskara</item>
+        <item>Français</item>
+        <item>Hrvatski</item>
+        <item>Italiano</item>
+        <item>Magyar</item>
+        <item>Nederlands</item>
+        <item>Norsk bokmål</item>
+        <item>Polski</item>
+        <item>Português</item>
+        <item>Português (Brasil)</item>
+        <item>Română</item>
+        <item>Slovenčina</item>
+        <item>Slovenščina</item>
+        <item>Srpski (latinica)</item>
+        <item>Svenska</item>
+        <item>Tiếng Việt</item>
+        <item>Türkçe</item>
+        <item>Ελληνικά</item>
+        <item>Български</item>
+        <item>Русский</item>
+        <item>Српски</item>
+        <item>Українська</item>
+        <item>עברית</item>
+        <item>العربية</item>
+        <item>فارسی</item>
+        <item>বাংলা</item>
+        <item>සිංහල</item>
+        <item>日本語</item>
+        <item>简体中文</item>
+        <item>繁體中文</item>
+        <item>한국어</item>
+    </string-array>
+
+    <string-array name="supported_languages_code" translatable="false">
+        <item>sys</item>
+        <item>en</item>
+        <item>ast-ES</item>
+        <item>az</item>
+        <item>id</item>
+        <item>ms</item>
+        <item>bs</item>
+        <item>ca</item>
+        <item>cs</item>
+        <item>da</item>
+        <item>de</item>
+        <item>es</item>
+        <item>eu</item>
+        <item>fr</item>
+        <item>hr</item>
+        <item>it</item>
+        <item>hu</item>
+        <item>nl</item>
+        <item>nb</item>
+        <item>pl</item>
+        <item>pt</item>
+        <item>pt-BR</item>
+        <item>ro</item>
+        <item>sk</item>
+        <item>sl</item>
+        <item>sr-CS</item>
+        <item>sv</item>
+        <item>vi</item>
+        <item>tr</item>
+        <item>el</item>
+        <item>bg</item>
+        <item>ru</item>
+        <item>sr</item>
+        <item>uk</item>
+        <item>he</item>
+        <item>ar</item>
+        <item>fa</item>
+        <item>bn</item>
+        <item>si</item>
+        <item>ja</item>
+        <item>zh-CN</item>
+        <item>zh-TW</item>
+        <item>ko</item>
+    </string-array>
+
+
+    <string-array name="log_history_days">
+        <item>@string/log_history_off</item>
+        <item>@string/log_history_7</item>
+        <item>@string/log_history_30</item>
+        <item>@string/log_history_90</item>
+    </string-array>
+
+    <string-array name="log_history_days_values" translatable="false">
+        <item>0</item>
+        <item>7</item>
+        <item>30</item>
+        <item>90</item>
+    </string-array>
+
+    <string-array name="filters">
+        <item>@string/pkg_all</item>
+        <item>@string/pkg_core</item>
+        <item>@string/pkg_sys</item>
+        <item>@string/pkg_user</item>
+    </string-array>
+    
+    <string-array name="iptables_binary">
+        <item>@string/system_ipt</item>
+        <item>@string/builtin_ipt</item>
+    </string-array>
+    
+      <string-array name="iptables_binary_path">
+        <item>system</item>
+        <item>builtin</item>
+    </string-array>
+
+    <string-array name="busybox_binary">
+        <item>@string/builtin_bb</item>
+        <item>@string/system_bb</item>
+    </string-array>
+    
+    
+    <string-array name="busybox_binary_path">
+        <item>builtin</item>
+        <item>system</item>
+    </string-array>
+    
+    <string-array name="pattern_max_attempt">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="password_options">
+        <item>@string/pref_none</item>
+        <item>@string/pref_password</item>
+        <item>@string/pref_pattern</item>
+        <item>@string/pref_fingerprint</item>
+    </string-array>
+
+    <string-array name="password_option_values">
+        <item>p0</item>
+        <item>p1</item>
+        <item>p2</item>
+        <item>p3</item>
+    </string-array>
+
+    <string-array name="logTargetArray">
+        <item>LOG</item>
+        <item>NFLOG</item>
+    </string-array>
+
+    <string-array name="logTargetValue">
+        <item>LOG</item>
+        <item>NFLOG</item>
+    </string-array>
+
+
+
+
+
+   <!-- <string-array name="logDmesgArray">
+        <item>System</item>
+        <item>Busybox</item>
+    </string-array>
+
+    <string-array name="logDmesgValue">
+        <item>OS</item>
+        <item>BB</item>
+    </string-array>-->
+
+
+
+    <string-array name="initDir" >
+    </string-array>
+
+    <string-array name="initValue" />
+
+
+
+    <string-array name="themeOptions">
+        <item>Dark</item>
+        <item>Light (Donate)</item>
+        <item>Light High Contrast (Donate)</item>
+        <item>Black (Donate)</item>
+        <item>Amber (Donate)</item>
+        <item>Ocean (Donate)</item>
+        <item>Forest (Donate)</item>
+        <item>Slate (Donate)</item>
+        <item>Plum (Donate)</item>
+    </string-array>
+
+    <string-array name="themeValues">
+        <item>D</item>
+        <item>L</item>
+        <item>LHC</item>
+        <item>B</item>
+        <item>A</item>
+        <item>O</item>
+        <item>F</item>
+        <item>S</item>
+        <item>P</item>
+    </string-array>
+
+    <!-- same order as TaskerAction.NETWORKS -->
+    <string-array name="tasker_networks">
+        <item>@string/tasker_network_all</item>
+        <item>@string/wifi</item>
+        <item>@string/mobile_data</item>
+        <item>@string/tasker_network_roaming</item>
+        <item>@string/vpn</item>
+        <item>@string/tasker_network_lan</item>
+        <item>@string/tasker_network_tether</item>
+    </string-array>
+</resources>

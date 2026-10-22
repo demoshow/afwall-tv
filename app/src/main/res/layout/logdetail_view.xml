@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?attr/itemBackground"
+
+    android:duplicateParentState="false"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/rule_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize" />
+
+    <TextView
+        android:id="@+id/emptydetail_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/no_data_available"
+        android:visibility="gone" />
+
+    <!-- Summary header, above the list (not scrolled with it) -->
+    <include
+        android:id="@+id/summary_header"
+        layout="@layout/log_detail_summary"
+        android:visibility="gone" />
+
+    <!-- Only the list scrolls, so rows are recycled (inside a scroll view every row was built at once) -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipedetailContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/detailrecyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- Loading more indicator -->
+    <TextView
+        android:id="@+id/loading_more_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/log_loading_more"
+        android:textAlignment="center"
+        android:padding="16dp"
+        android:textColor="?attr/tint"
+        android:visibility="gone" />
+
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- <PreferenceCategory android:title="@string/log_prefs_title" >
+         <CheckBoxPreference
+             android:key="enableLog"
+             android:summary="@string/showlog_title"
+             android:title="@string/enable_firewall_log" />
+       </PreferenceCategory>-->
+
+    <PreferenceCategory
+        android:key="logExperimental"
+        android:title="@string/exp_prefs_title">
+
+        <!--<ListPreference
+            android:defaultValue="OS"
+            android:summary="%s"
+            android:entries="@array/logDmesgArray"
+            android:entryValues="@array/logDmesgValue"
+            android:key="logDmesg"
+            android:title="@string/log_dmesg"></ListPreference>-->
+
+        <CheckBoxPreference
+            android:key="enableLogService"
+            android:title="@string/enable_firewall_log_service" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="enableLogService"
+            android:key="notifyBlocked"
+            android:summary="@string/notify_blocked_summary"
+            android:title="@string/notify_blocked_title" />
+
+        <ListPreference
+            android:defaultValue="LOG"
+            android:summary="%s"
+            android:dependency="enableLogService"
+            android:key="logTarget"
+            android:title="@string/log_target"></ListPreference>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dependency="enableLogService"
+            android:enabled="false"
+            android:key="showHostName"
+            android:summary="@string/showhost_desc"
+            android:title="@string/show_host" />
+
+        <!-- counts kept for the log dashboard; the log itself only keeps a few hours (LogHistory) -->
+        <ListPreference
+            android:defaultValue="30"
+            android:dependency="enableLogService"
+            android:entries="@array/log_history_days"
+            android:entryValues="@array/log_history_days_values"
+            android:key="logHistoryDays"
+            android:summary="%s"
+            android:title="@string/log_history_title" />
+
+
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

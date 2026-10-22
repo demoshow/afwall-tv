@@ -1,0 +1,47 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/languages">
+        <ListPreference
+            android:defaultValue="sys"
+            android:entries="@array/supported_languages"
+            android:entryValues="@array/supported_languages_code"
+            android:key="locale"
+            android:summary="%s"
+            android:title="@string/change_languages"></ListPreference>
+
+    </PreferenceCategory>
+
+
+
+    <PreferenceCategory
+        android:key="taskerCategory"
+        android:title="@string/tasker_prefs_title">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="allowTaskerControl"
+            android:summary="@string/allow_tasker_control_summary"
+            android:title="@string/allow_tasker_control" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="disableTaskerToast"
+            android:summary="@string/disableTasterSummary"
+            android:title="@string/disable_toaster" />
+        <!-- default decided in G.taskerAcceptUnsigned() (on for updates, off for new installs); shown only
+             once an unprotected action has been received -->
+        <CheckBoxPreference
+            android:key="taskerAcceptUnsigned"
+            android:summary="@string/tasker_accept_unsigned_summary"
+            android:title="@string/tasker_accept_unsigned" />
+        <Preference
+            android:key="taskerRecent"
+            android:summary="@string/tasker_recent_summary"
+            android:title="@string/tasker_recent" />
+        <Preference
+            android:key="taskerRevoke"
+            android:summary="@string/tasker_revoke_summary"
+            android:title="@string/tasker_revoke" />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
