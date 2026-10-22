@@ -20,6 +20,7 @@
  *
  * @author Rodrigo Zechin Rosauro, Umakanthan Chandran
  * @version 1.1
+  * Modified by demoshow for AFWall+ TV
  */
 
 package dev.ukanth.ufirewall;

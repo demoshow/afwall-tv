@@ -3,6 +3,7 @@
  * Based on AFWall+ by Umakanthan Chandran and contributors.
  * GPL-3.0-or-later; see LICENSE and NOTICE.md.
  * Modified 2026-10-22: localized TV interface and public source distribution.
+  * Modified by demoshow for AFWall+ TV
  */
 package dev.ukanth.ufirewall;
 

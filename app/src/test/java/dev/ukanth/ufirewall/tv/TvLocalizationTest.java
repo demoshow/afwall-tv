@@ -1,4 +1,5 @@
-/* TV additions, GPL-3.0-or-later. Modified 2026-10-22. */
+/* TV additions, GPL-3.0-or-later. Modified 2026-10-22.  * Modified by demoshow for AFWall+ TV
+ */
 package dev.ukanth.ufirewall.tv;
 
 import static org.junit.Assert.*;

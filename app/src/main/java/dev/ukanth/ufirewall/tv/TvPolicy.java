@@ -1,4 +1,5 @@
-/* AFWall+ TV adaptations, GPL-3.0-or-later. */
+/* AFWall+ TV adaptations, GPL-3.0-or-later.  * Modified by demoshow for AFWall+ TV
+ */
 package dev.ukanth.ufirewall.tv;
 
 /** Maps the TV's three choices to upstream AFWall+ blacklist selections. */

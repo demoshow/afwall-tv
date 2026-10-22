@@ -1,3 +1,4 @@
+// Modified by demoshow for AFWall+ TV
 apply plugin: 'com.android.application'
 
 android {

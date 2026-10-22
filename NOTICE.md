@@ -37,3 +37,62 @@ AFWall+ TV 是 AFWall+ 的独立、非官方派生版本。基线为上述准确
 应用继续遵循 GPLv3 及原文件允许的后续版本条款；独立第三方组件分别遵循其原有
 许可。新建仓库只清除本地开发的 Git 历史，不取消原作者署名或 GPL 义务。仓库未
 建立 GitHub fork 网络关系，并不代表所继承的代码由本项目原创。
+
+## Copyright notices / 版权声明
+
+```text
+Copyright (C) 2009-2011 Rodrigo Zechin Rosauro
+Copyright (C) 2011-2024 Umakanthan Chandran
+Copyright (C) 2026 demoshow
+```
+
+The original authors' notices above and the notices in individual upstream files
+are retained. The demoshow line covers the TV-specific modifications and additions,
+not ownership of the inherited firewall engine or third-party components.
+
+## Modified and added paths / 实际修改与新增范围
+
+Compared with the upstream snapshot named above, the modified upstream build,
+manifest, shortcut and Java paths are:
+
+- `app/build.gradle`
+- `app/src/main/AndroidManifest.xml`
+- `app/src/main/java/dev/ukanth/ufirewall/Api.java`
+- `app/src/main/java/dev/ukanth/ufirewall/MainActivity.java`
+- `app/src/main/java/dev/ukanth/ufirewall/activity/HelpActivity.java`
+- `app/src/main/java/dev/ukanth/ufirewall/broadcast/NotificationActionReceiver.java`
+- `app/src/main/java/dev/ukanth/ufirewall/plugin/PluginBundleManager.java`
+- `app/src/main/java/dev/ukanth/ufirewall/preferences/CustomThemePreferenceFragment.java`
+- `app/src/main/java/dev/ukanth/ufirewall/preferences/PreferencesActivity.java`
+- `app/src/main/java/dev/ukanth/ufirewall/preferences/ThemePreferenceFragment.java`
+- `app/src/main/java/dev/ukanth/ufirewall/service/LogService.java`
+- `app/src/main/java/dev/ukanth/ufirewall/util/AppListArrayAdapter.java`
+- `app/src/main/java/dev/ukanth/ufirewall/util/Notifications.java`
+- `app/src/main/java/dev/ukanth/ufirewall/widget/WidgetActionActivity.java`
+- `app/src/main/res/xml/shortcuts.xml`
+- `build.gradle`
+- `gradle.properties`
+- `gradle/wrapper/gradle-wrapper.properties`
+
+TV-specific additions include:
+
+- `app/src/main/java/dev/ukanth/ufirewall/TvActivity.java` — TV policy interface and explicit apply flow.
+- `app/src/main/java/dev/ukanth/ufirewall/tv/TvPolicy.java` — policy/mode mapping and core UID protection.
+- `app/src/main/java/dev/ukanth/ufirewall/util/TvRemoteNavigation.java` — advanced UI D-pad focus support.
+- `app/src/main/res/values/tv_strings.xml`, `values-zh/tv_strings.xml`,
+  `values-b+zh+Hant/tv_strings.xml` — bilingual TV resources and Chinese-region fallback
+  (the latter two paths are also under `app/src/main/res/`).
+- `app/src/main/res/drawable/tv_banner.xml`, `tv_remote_focus.xml`, and
+  `app/src/main/res/values/tv_remote_ids.xml` — TV banner and focus resources.
+- `app/src/test/java/dev/ukanth/ufirewall/tv/` — policy, localization and application-identity tests.
+- `scripts/verify_tv_resources.py` and project documentation — translation checks,
+  source/licensing provenance, build instructions, acceptance and release guidance.
+
+Changes in these paths concern the TV adaptation, application identity/isolation,
+localization and build/documentation integration. Existing Java packages and
+upstream copyright/license headers remain in place. Modified upstream source
+headers carry `Modified by demoshow for AFWall+ TV`.
+
+中文：保留原作者上述版权行及文件内原始声明，新增 demoshow 版权仅覆盖本项目
+适配和新增部分，不表示原防火墙引擎由 demoshow 原创。以上按实际相对上游的
+改动列出路径；不删除第三方许可证，也不更改原 Java 包名。

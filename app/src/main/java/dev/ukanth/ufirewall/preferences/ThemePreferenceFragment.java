@@ -1,3 +1,4 @@
+/* Modified by demoshow for AFWall+ TV */
 package dev.ukanth.ufirewall.preferences;
 
 import dev.ukanth.ufirewall.BuildConfig;

@@ -1,4 +1,5 @@
-/* AFWall+ TV additions, GPL-3.0-or-later. Modified 2026-10-18. */
+/* AFWall+ TV additions, GPL-3.0-or-later. Modified 2026-10-18.  * Modified by demoshow for AFWall+ TV
+ */
 package dev.ukanth.ufirewall.util;
 
 import android.content.Context;
