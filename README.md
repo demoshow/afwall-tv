@@ -2,16 +2,40 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
-A remote-friendly application firewall interface for rooted Android TV devices,
-derived from [AFWall+](https://github.com/ukanth/afwall).
+**AFWall+ TV is a TV-focused adaptation of
+[AFWall+](https://github.com/ukanth/afwall), not a firewall built from scratch.**
+
+> **The firewall core and the substantial majority of this application come from
+> AFWall+.** Credit for the upstream application, rule engine and established
+> capabilities belongs to Umakanthan Chandran and the AFWall+ contributors,
+> building on earlier work by Rodrigo Zechin Rosauro and other authors credited
+> in the source. This project’s additions focus on the TV interface, remote
+> navigation, policy presentation and localization.
+
+**Upstream project:** [ukanth/afwall](https://github.com/ukanth/afwall) ·
+**Upstream documentation:** [AFWall+ Wiki](https://github.com/ukanth/afwall/wiki)
 
 **Unofficial derivative · Android 7.0+ · Root required · GPLv3**
 
-This project adds a TV-first, three-policy interface while retaining the upstream
-AFWall+ rule engine and advanced settings. It is an independent source release,
-not an official AFWall+ build or an assurance of complete network isolation.
+Thank you to the AFWall+ maintainers and contributors for the implementation and
+ongoing work that make this adaptation possible. If this project is useful to
+you, please also recognize and support
+[the original project](https://github.com/ukanth/afwall#support-afwall-development).
+This is an independent, unofficial source distribution, not a claim of original
+authorship of the inherited application or an assurance of complete network isolation.
 
-## Features
+## What comes from AFWall+, and what this project adds
+
+### Inherited from AFWall+
+
+The application architecture, iptables/ip6tables rule generation and application,
+UID-based network filtering, IPv4/IPv6 handling, network-type configuration,
+profiles, logging, boot restoration, advanced settings and much of the existing
+UI, translations and test suite are upstream AFWall+ work. The bundled native
+tools also come from upstream and their respective authors. **These are not
+features newly implemented by AFWall+ TV.**
+
+### TV-specific additions and adaptations
 
 - **Three explicit policies:** Unrestricted, LAN only, and Blocked, shown by app
   UID group instead of ambiguous allow/block checkboxes.
@@ -25,7 +49,13 @@ not an official AFWall+ build or an assurance of complete network isolation.
 - **Explicit application:** editing a selection creates a draft. Applying and
   enabling requires confirmation and root authorization through the root manager.
 - **Advanced configuration retained:** existing allowlist/blocklist mode, scripts,
-  direct rules and Tor settings are not silently replaced by a new UI.
+  direct rules and Tor settings are not silently replaced by a new UI. These
+  capabilities are inherited; the TV-specific work is their policy mapping and
+  integration with the simplified interface.
+
+The three-policy interface delegates enforcement to AFWall+; it does not replace
+or independently reimplement the upstream firewall engine. Additional regression
+and localization tests cover the adaptation, alongside the retained upstream tests.
 
 ## Policies and their limits
 
@@ -125,8 +155,10 @@ Original copyright and license notices are retained. The application remains
 under GNU GPL version 3, with later-version permission where present in the
 original notices; separately licensed components retain their terms.
 
-This repository intentionally has a fresh initial history and is not a
-GitHub-network fork. That changes neither attribution nor copyleft obligations.
+This repository intentionally started from a fresh source snapshot rather than
+importing the previous Git history, and is not a GitHub-network fork. **That
+repository layout does not make the inherited code original work of this
+project.** Attribution, copyright and copyleft obligations remain unchanged.
 See [LICENSE](LICENSE), [NOTICE.md](NOTICE.md), [THIRD_PARTY.md](THIRD_PARTY.md),
 and the preserved [upstream README](docs/upstream/README.md).
 Contributions are described in [CONTRIBUTING.md](CONTRIBUTING.md).

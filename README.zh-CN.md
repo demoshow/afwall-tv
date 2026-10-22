@@ -2,15 +2,35 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
-面向已获取 root 权限的 Android TV 设备，基于
-[AFWall+](https://github.com/ukanth/afwall) 开发的遥控器友好型应用防火墙界面。
+**AFWall+ TV 是 [AFWall+](https://github.com/ukanth/afwall) 的电视适配版本，
+不是从零开发的防火墙。**
+
+> **本项目的防火墙核心及绝大部分应用实现均来自 AFWall+。** 原有应用、规则引擎
+> 和成熟功能的主要贡献应归于 Umakanthan Chandran 及 AFWall+ 贡献者，以及
+> Rodrigo Zechin Rosauro 等前序作者；具体署名保留在源码中。本项目的新增工作
+> 主要集中在电视界面、遥控器操作、三档策略呈现与本地化。
+
+**原项目：** [ukanth/afwall](https://github.com/ukanth/afwall) ·
+**上游文档：** [AFWall+ Wiki](https://github.com/ukanth/afwall/wiki)
 
 **非官方派生版本 · Android 7.0 及以上 · 需要 root · GPLv3**
 
-项目在保留 AFWall+ 规则引擎和高级设置的基础上，提供适合电视操作的三档联网
-策略。这是独立的源码发行，不是官方 AFWall+ 版本，也不构成绝对网络隔离承诺。
+感谢 AFWall+ 维护者及所有贡献者提供的核心实现与持续维护，本项目建立在他们的
+工作之上。如果这个电视适配版本对你有帮助，也请关注和支持
+[AFWall+ 原项目](https://github.com/ukanth/afwall#support-afwall-development)。
+本仓库是独立的非官方源码发行，不代表对所继承应用的原创声明，也不构成绝对
+网络隔离承诺。
 
-## 主要功能
+## 哪些能力来自 AFWall+，哪些是本项目新增
+
+### 继承自 AFWall+ 的核心能力
+
+应用架构、iptables/ip6tables 规则生成与应用、基于 UID 的网络过滤、IPv4/IPv6
+处理、各网络类型配置、多配置方案、日志、开机恢复、高级设置，以及大量原有
+界面、翻译和测试，均来自 AFWall+。内置原生工具也来自上游及各自作者。
+**这些核心能力不是 AFWall+ TV 重新实现的功能，不应归作本项目原创。**
+
+### 本项目新增或适配的 TV 层
 
 - **明确的三档策略：** 正常联网、仅内网、禁止联网，按应用 UID 分组显示，避免
   直接面对含义随模式变化的复选框。
@@ -23,7 +43,11 @@
 - **明确的生效边界：** 修改选档只是草稿；必须确认应用并通过 root 管理器授权，
   才会写入实际规则。
 - **保留高级配置：** 不再将默认开启的标志误报为已有自定义规则；保留现有白名单/
-  黑名单模式、脚本、直接规则及 Tor 设置。
+  黑名单模式、脚本、直接规则及 Tor 设置。这些能力本身来自上游，本项目负责
+  三档策略与原有配置之间的映射和界面衔接。
+
+三档界面最终调用 AFWall+ 执行规则，并未替换或独立重写其防火墙引擎。新增的
+策略回归和本地化测试用于验证适配层，同时保留上游原有测试。
 
 ## 三档策略及边界
 
@@ -110,7 +134,8 @@ TV 改版问题请先提交到[本仓库](https://github.com/demoshow/afwall-tv/
 原作者版权和许可声明保持不变。应用继续按 GNU GPLv3 及原文件允许的后续版本
 条款发布；独立第三方组件保持各自授权。
 
-本仓库只保留新的初始历史，不建立 GitHub fork 网络关系。这不会取消署名、
-copyleft 或完整对应源码义务。详见[许可证](LICENSE)、[修改声明](NOTICE.md)、
+本仓库从干净的源码快照建立历史，未导入此前 Git 记录，也未建立 GitHub fork
+网络关系。**这种仓库组织方式不代表所继承代码由本项目原创**，不会取消原作者
+署名、版权、copyleft 或完整对应源码义务。详见[许可证](LICENSE)、[修改声明](NOTICE.md)、
 [第三方组件](THIRD_PARTY.md)及保留的[上游 README](docs/upstream/README.md)。
 贡献流程参见 [CONTRIBUTING.md](CONTRIBUTING.md)。
