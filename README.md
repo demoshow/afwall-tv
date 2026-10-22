@@ -2,101 +2,71 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
-**AFWall+ TV is a TV-focused adaptation of
-[AFWall+](https://github.com/ukanth/afwall), not a firewall built from scratch.**
+A remote-friendly, three-policy application firewall interface for rooted Android TV devices.
 
-> **The firewall core and the substantial majority of this application come from
-> AFWall+.** Credit for the upstream application, rule engine and established
-> capabilities belongs to Umakanthan Chandran and the AFWall+ contributors,
-> building on earlier work by Rodrigo Zechin Rosauro and other authors credited
-> in the source. This project’s additions focus on the TV interface, remote
-> navigation, policy presentation and localization.
+## Relationship to AFWall+
 
-**Upstream project:** [ukanth/afwall](https://github.com/ukanth/afwall) ·
-**Upstream documentation:** [AFWall+ Wiki](https://github.com/ukanth/afwall/wiki)
+**The firewall core and substantial majority of the application come from
+[AFWall+](https://github.com/ukanth/afwall).** This unofficial adaptation is based on
+[`acfebf0f04c807acd7fe80b27d09c04e9b581e74`](https://github.com/ukanth/afwall/tree/acfebf0f04c807acd7fe80b27d09c04e9b581e74).
+Credit belongs to Umakanthan Chandran, the AFWall+ contributors, Rodrigo Zechin
+Rosauro and the other original authors. Thank you for the engine, advanced UI,
+native integration and existing translations/tests that make this adaptation
+possible. [Upstream documentation](https://github.com/ukanth/afwall/wiki) ·
+[Support AFWall+](https://github.com/ukanth/afwall#support-afwall-development).
 
-**Unofficial derivative · Android 7.0+ · Root required · GPLv3**
+## TV-specific additions
 
-Thank you to the AFWall+ maintainers and contributors for the implementation and
-ongoing work that make this adaptation possible. If this project is useful to
-you, please also recognize and support
-[the original project](https://github.com/ukanth/afwall#support-afwall-development).
-This is an independent, unofficial source distribution, not a claim of original
-authorship of the inherited application or an assurance of complete network isolation.
+- Three explicit policies per UID group: **Unrestricted**, **LAN only**, **Blocked**.
+- D-pad navigation, OK selection, Back/discard handling and advanced-UI focus/click support.
+- Shared-UID grouping and protection of core, maintenance and this app’s own UIDs.
+- English/Chinese TV resources following the system language; other locales fall
+  back to English. Upstream advanced-screen translations remain available.
+- Policy mapping into the existing allowlist/blocklist mode, regression tests,
+  and a fix for the default custom-rule flag incorrectly blocking application.
 
-## What comes from AFWall+, and what this project adds
+Editing creates a draft. Only an explicit apply confirmation and root grant
+activate rules. Advanced mode, scripts, direct rules and Tor settings are retained.
 
-### Inherited from AFWall+
+## Policies and limitations
 
-The application architecture, iptables/ip6tables rule generation and application,
-UID-based network filtering, IPv4/IPv6 handling, network-type configuration,
-profiles, logging, boot restoration, advanced settings and much of the existing
-UI, translations and test suite are upstream AFWall+ work. The bundled native
-tools also come from upstream and their respective authors. **These are not
-features newly implemented by AFWall+ TV.**
-
-### TV-specific additions and adaptations
-
-- **Three explicit policies:** Unrestricted, LAN only, and Blocked, shown by app
-  UID group instead of ambiguous allow/block checkboxes.
-- **Remote control support:** D-pad list/toolbar navigation, OK policy selection,
-  Back/discard confirmation, and visible focus in the advanced interface.
-- **Shared/core UID handling:** packages sharing a UID are grouped; Android,
-  maintenance and this app’s own UIDs are protected in the TV interface.
-- **English and Chinese TV resources:** follows the system language. The TV layer
-  uses Simplified Chinese for Chinese locales and English otherwise. Existing
-  upstream translations remain available in advanced screens.
-- **Explicit application:** editing a selection creates a draft. Applying and
-  enabling requires confirmation and root authorization through the root manager.
-- **Advanced configuration retained:** existing allowlist/blocklist mode, scripts,
-  direct rules and Tor settings are not silently replaced by a new UI. These
-  capabilities are inherited; the TV-specific work is their policy mapping and
-  integration with the simplified interface.
-
-The three-policy interface delegates enforcement to AFWall+; it does not replace
-or independently reimplement the upstream firewall engine. Additional regression
-and localization tests cover the adaptation, alongside the retained upstream tests.
-
-## Policies and their limits
-
-| TV policy | Intended direct app traffic |
+| Policy | Intended direct app traffic |
 | --- | --- |
-| Unrestricted | No additional restriction from the TV policy |
-| LAN only | Allow the engine’s LAN/private/discovery destinations; restrict internet traffic on Wi-Fi/Ethernet, mobile and VPN paths |
-| Blocked | Restrict direct LAN and WAN traffic, subject to inherited engine exceptions |
+| Unrestricted | No additional app restriction |
+| LAN only | Allow engine-defined LAN/private/discovery destinations; restrict Wi-Fi/Ethernet internet, mobile and VPN traffic |
+| Blocked | Restrict direct LAN/WAN traffic, subject to engine exceptions |
 
-These labels describe intended rules, **not absolute guarantees**. Loopback,
-DNS, system proxies, root privileges, shared UIDs, VPN routing, kernel behavior,
-advanced rules and boot timing can change observed results. “LAN only” is not an
-allowlist for one chosen NAS or IP address. Packages sharing a UID cannot have
-independent policies. New apps follow the active upstream mode: allowed by
-default in blocklist mode, blocked by default in allowlist mode.
+These are rule intentions, not complete-isolation guarantees. DNS, loopback,
+system proxies, VPN routing, kernel/OEM behavior, existing advanced rules and
+boot timing can affect results; root-capable software can change rules. LAN only
+is not a single-NAS/IP allowlist. Packages sharing a UID cannot be filtered
+separately. Boot restoration does not guarantee zero early traffic.
 
-The advanced screen retains upstream checkbox semantics: checked means allowed
-in allowlist mode and blocked in blocklist mode. The TV screen translates those
-selections so its three labels keep the same meaning in either mode.
+New apps follow the advanced mode default: allowed in blocklist mode, blocked
+in allowlist mode. Advanced checkboxes mean allowed in allowlist mode and blocked
+in blocklist mode; the TV labels keep the same meaning through conversion.
 
 ## Requirements and first use
 
-1. Use Android 7.0/API 24 or newer, a compatible root manager and a kernel with
-   working iptables/ip6tables support. A minimum SDK is not a device certification.
-2. Build and sign the app yourself using [BUILDING.md](docs/BUILDING.md). This
-   initial GitHub publication is source-only; no APK or signing key is uploaded.
-3. Open **AFWall+ TV**, select a nonessential app, press OK and choose a policy.
-4. Select **Apply rules** and read the confirmation. Grant root yourself when
-   prompted. On application, LAN/IPv6/VPN/roaming/tethering columns are enabled
-   to represent the policies; existing Tor settings and advanced mode remain.
-5. Verify LAN/WAN and IPv4/IPv6 behavior on that device. **Disable firewall**
-   removes this app’s rules and retains the saved selections.
+1. Android 7.0/API 24+, a compatible root manager, and working kernel
+   iptables/ip6tables support are required. Minimum SDK is not device certification.
+2. Build the app using [BUILDING.md](docs/BUILDING.md). The application ID is
+   `io.github.demoshow.afwalltv`; the Java namespace stays `dev.ukanth.ufirewall`.
+   This is a separate installation without automatic old-data/root-grant/Tasker
+   migration; see [APP_ID.md](docs/APP_ID.md). This repository currently publishes source only.
+3. Start with one nonessential app: select a policy, choose **Apply rules**, read
+   the confirmation and grant root yourself. Applying enables the LAN/IPv6/VPN/
+   roaming/tethering columns needed to represent the policies.
+4. Verify LAN/WAN and IPv4/IPv6 on that device. **Disable firewall** removes this
+   app’s rules while retaining saved selections.
 
-Do not enable this app and upstream AFWall+ simultaneously: both use the same
-iptables chains. Keep local recovery access, avoid restrictive system/root/ADB
-rules, and disable the firewall before uninstalling. See [SECURITY.md](SECURITY.md).
+**Do not enable upstream AFWall+ and this app simultaneously: they share iptables
+chain names.** Keep local recovery access, avoid restrictive system/root/ADB rules,
+and disable the firewall before uninstalling. See [SECURITY.md](SECURITY.md).
 
 ## Build and test
 
-JDK 17, Android SDK 34, Build Tools 34.0.0, Gradle 8.7 and AGP 8.5.0 are used.
-The wrapper is included with a distribution checksum.
+Use JDK 17, SDK/compile/target 34, Build Tools 34.0.0, Gradle 8.7 and AGP 8.5.0.
 
 ```sh
 git clone https://github.com/demoshow/afwall-tv.git
@@ -105,61 +75,22 @@ cd afwall-tv
 python3 scripts/verify_tv_resources.py
 ```
 
-The release APK is unsigned by default. Keep signing credentials outside the
-repository. The application ID is `io.github.demoshow.afwalltv`; it installs
-separately from previous local TV builds and upstream AFWall+. Existing app data
-is not automatically migrated. The project is not tied to one TV box model. First builds
-download dependencies. Native helpers inherited from upstream are included;
-their sources, modifications and licenses are documented in
-[THIRD_PARTY.md](THIRD_PARTY.md). No claim of byte-reproducible native builds is made.
+Release output is unsigned; manage your own private signing material outside
+the repository. First builds/tests download dependencies and Android test artifacts.
+Inherited native helpers and their source/terms are listed in
+[THIRD_PARTY.md](THIRD_PARTY.md); byte-reproducible native builds are not claimed.
+JVM/resource tests do not validate physical remotes, root dialogs, boot behavior
+or real isolation: use the [manual checklist](docs/TESTING.md).
 
-Policy regression tests and Android resource-resolution tests are included.
-They cover the default custom-rule-flag regression, policy conversions, core UID
-protection, English/Chinese selection and fallback. They do not replace hardware,
-root, boot or real network-filtering tests. Follow the
-[manual acceptance checklist](docs/TESTING.md).
+The TV additions introduce no analytics/cloud account requirement, but inherited
+optional external links and DNS/hostname lookups remain; this is not an offline
+or security-audit claim. Redact logs and inventories when
+[reporting issues](https://github.com/demoshow/afwall-tv/issues).
+[Contributing](CONTRIBUTING.md).
 
-## Source layout
+## License
 
-```text
-app/src/main/java/dev/ukanth/ufirewall/
-  TvActivity.java                  TV interface and explicit apply flow
-  tv/TvPolicy.java                 Mode-independent policy mapping
-  util/TvRemoteNavigation.java     Advanced-interface D-pad focus support
-  Api.java                        Inherited firewall engine
-app/src/main/res/values*/          Upstream and TV language resources
-app/src/test/                     Upstream, policy and localization tests
-external/                         Native source and configuration
-third_party/sources/              Official native source archives and hashes
-docs/                             Build, acceptance and upstream provenance
-```
-
-## Privacy and external dependencies
-
-The TV additions introduce no analytics service, remote-control endpoint or
-cloud account requirement. The inherited application still contains optional
-external links and DNS/hostname lookup features; this is not an audited claim
-that all upstream behavior is offline. Root authorization is managed by the
-installed root manager, not a service provided by this repository.
-
-The build resolves dependencies from the repositories declared in Gradle;
-Robolectric may download Android framework artifacts for tests. Do not share
-unredacted inventories or logs in public issues. Report TV-specific problems in
-[this repository](https://github.com/demoshow/afwall-tv/issues), not to upstream
-unless reproduced there independently.
-
-## License, provenance and contributions
-
-Based on upstream commit
-[`acfebf0f04c807acd7fe80b27d09c04e9b581e74`](https://github.com/ukanth/afwall/tree/acfebf0f04c807acd7fe80b27d09c04e9b581e74).
-Original copyright and license notices are retained. The application remains
-under GNU GPL version 3, with later-version permission where present in the
-original notices; separately licensed components retain their terms.
-
-This repository intentionally started from a fresh source snapshot rather than
-importing the previous Git history, and is not a GitHub-network fork. **That
-repository layout does not make the inherited code original work of this
-project.** Attribution, copyright and copyleft obligations remain unchanged.
-See [LICENSE](LICENSE), [NOTICE.md](NOTICE.md), [THIRD_PARTY.md](THIRD_PARTY.md),
-and the preserved [upstream README](docs/upstream/README.md).
-Contributions are described in [CONTRIBUTING.md](CONTRIBUTING.md).
+GNU GPL-3.0, with later-version permission where granted by original file notices.
+Third-party components retain their own terms. See [LICENSE](LICENSE),
+[NOTICE.md](NOTICE.md) and [THIRD_PARTY.md](THIRD_PARTY.md). A fresh Git history does
+not remove attribution or corresponding-source obligations.
