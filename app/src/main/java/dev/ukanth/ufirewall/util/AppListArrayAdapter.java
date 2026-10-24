@@ -1,3 +1,4 @@
+/* Modified by demoshow for AFWall+ TV */
 package dev.ukanth.ufirewall.util;
 
 import android.app.Activity;
@@ -48,6 +49,7 @@ import android.content.res.ColorStateList;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.CompoundButtonCompat;
 
+// Modified 2026-10-18: D-pad clicks update policies without relying on touch isPressed().
 public class AppListArrayAdapter extends ArrayAdapter<PackageInfoData> {
 
     public static final String TAG = "AFWall";
@@ -219,8 +221,39 @@ public class AppListArrayAdapter extends ArrayAdapter<PackageInfoData> {
 
         setupExpandableView(holder, convertView, position);
         addEventListenter(holder);
+        if (TvRemoteNavigation.isTelevision(context)) {
+            // CompoundButton clears its pressed flag before keyboard performClick().
+            // Use user clicks, not isPressed(), and never treat recycled binding as input.
+            bindRemoteCheckbox(holder.box_wifi, holder.app, 0);
+            bindRemoteCheckbox(holder.box_lan, holder.app, 1);
+            bindRemoteCheckbox(holder.box_3g, holder.app, 2);
+            bindRemoteCheckbox(holder.box_roam, holder.app, 3);
+            bindRemoteCheckbox(holder.box_vpn, holder.app, 4);
+            bindRemoteCheckbox(holder.box_tether, holder.app, 5);
+            bindRemoteCheckbox(holder.box_tor, holder.app, 6);
+            TvRemoteNavigation.prepare(convertView);
+        }
 
         return convertView;
+    }
+
+    private void bindRemoteCheckbox(CheckBox box, PackageInfoData app, int column) {
+        if (box == null) return;
+        box.setOnCheckedChangeListener(null);
+        box.setOnClickListener(view -> {
+            boolean checked = ((CheckBox) view).isChecked();
+            switch (column) {
+                case 0: app.selected_wifi = checked; break;
+                case 1: app.selected_lan = checked; break;
+                case 2: app.selected_3g = checked; break;
+                case 3: app.selected_roam = checked; break;
+                case 4: app.selected_vpn = checked; break;
+                case 5: app.selected_tether = checked; break;
+                case 6: app.selected_tor = checked; break;
+                default: return;
+            }
+            MainActivity.dirty = true;
+        });
     }
 
     private void toggleExpansion(View convertView, int position) {

@@ -19,6 +19,7 @@
  *
  * @author Rodrigo Zechin Rosauro, Umakanthan Chandran
  * @version 1.2
+  * Modified by demoshow for AFWall+ TV
  */
 
 package dev.ukanth.ufirewall;
@@ -203,17 +204,17 @@ public final class Api {
     // Modes
     public static final String MODE_WHITELIST = "whitelist";
     public static final String MODE_BLACKLIST = "blacklist";
-    public static final String STATUS_CHANGED_MSG = "dev.ukanth.ufirewall.intent.action.STATUS_CHANGED";
-    public static final String TOGGLE_REQUEST_MSG = "dev.ukanth.ufirewall.intent.action.TOGGLE_REQUEST";
-    public static final String CUSTOM_SCRIPT_MSG = "dev.ukanth.ufirewall.intent.action.CUSTOM_SCRIPT";
+    public static final String STATUS_CHANGED_MSG = BuildConfig.APPLICATION_ID + ".intent.action.STATUS_CHANGED";
+    public static final String TOGGLE_REQUEST_MSG = BuildConfig.APPLICATION_ID + ".intent.action.TOGGLE_REQUEST";
+    public static final String CUSTOM_SCRIPT_MSG = BuildConfig.APPLICATION_ID + ".intent.action.CUSTOM_SCRIPT";
     // custom script line, already a complete command: a failure is reported but not fatal
     private static final String LITERAL = "#LITERAL# ";
     // custom script line, already a complete command: a failure is ignored
     private static final String LITERAL_NOCHK = "#LITNOCHK# ";
     // Message extras (parameters)
-    public static final String STATUS_EXTRA = "dev.ukanth.ufirewall.intent.extra.STATUS";
-    public static final String SCRIPT_EXTRA = "dev.ukanth.ufirewall.intent.extra.SCRIPT";
-    public static final String SCRIPT2_EXTRA = "dev.ukanth.ufirewall.intent.extra.SCRIPT2";
+    public static final String STATUS_EXTRA = BuildConfig.APPLICATION_ID + ".intent.extra.STATUS";
+    public static final String SCRIPT_EXTRA = BuildConfig.APPLICATION_ID + ".intent.extra.SCRIPT";
+    public static final String SCRIPT2_EXTRA = BuildConfig.APPLICATION_ID + ".intent.extra.SCRIPT2";
     public static final int ERROR_NOTIFICATION_ID = 9;
     public static final int CUSTOM_SCRIPT_WARNING_NOTIFICATION_ID = 10;
     public static final int LOG_WATCHER_FAILED_NOTIFICATION_ID = 11;

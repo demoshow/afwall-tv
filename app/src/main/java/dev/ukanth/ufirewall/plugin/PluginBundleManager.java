@@ -8,9 +8,12 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and limitations under the License.
+  * Modified by demoshow for AFWall+ TV
  */
 
 package dev.ukanth.ufirewall.plugin;
+
+import dev.ukanth.ufirewall.BuildConfig;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -26,7 +29,7 @@ public final class PluginBundleManager
      * <p>
      * String message to display in a Toast message.
      */
-    public static final String BUNDLE_EXTRA_STRING_MESSAGE = "dev.ukanth.ufirewall.plugin.APPLY_PROFILE"; //$NON-NLS-1$
+    public static final String BUNDLE_EXTRA_STRING_MESSAGE = BuildConfig.APPLICATION_ID + ".plugin.APPLY_PROFILE"; //$NON-NLS-1$
 
     /**
      * Type: {@code int}
@@ -38,7 +41,7 @@ public final class PluginBundleManager
      * easier. For example, suppose a bug is found in how some version of the plug-in stored its Bundle. By
      * having the version, the plug-in can better detect when such bugs occur.
      */
-    public static final String BUNDLE_EXTRA_INT_VERSION_CODE = "dev.ukanth.ufirewall.plugin.extra.INT_VERSION_CODE"; //$NON-NLS-1$
+    public static final String BUNDLE_EXTRA_INT_VERSION_CODE = BuildConfig.APPLICATION_ID + ".plugin.extra.INT_VERSION_CODE"; //$NON-NLS-1$
 
     /**
      * Type: {@code String}, optional.
@@ -46,23 +49,23 @@ public final class PluginBundleManager
      * Identifier of the profile to switch to, so the action keeps working after the profile is
      * renamed. Actions saved by older versions only have the name in the message.
      */
-    public static final String BUNDLE_EXTRA_STRING_PROFILE_ID = "dev.ukanth.ufirewall.plugin.extra.PROFILE_ID"; //$NON-NLS-1$
+    public static final String BUNDLE_EXTRA_STRING_PROFILE_ID = BuildConfig.APPLICATION_ID + ".plugin.extra.PROFILE_ID"; //$NON-NLS-1$
 
     // Signed actions (5.1.0+); see TaskerAction for the fields. Strings only, so every host can
     // store them.
-    static final String EXTRA_ACTION = "dev.ukanth.ufirewall.plugin.extra.ACTION";
-    static final String EXTRA_PACKAGE = "dev.ukanth.ufirewall.plugin.extra.PACKAGE";
+    static final String EXTRA_ACTION = BuildConfig.APPLICATION_ID + ".plugin.extra.ACTION";
+    static final String EXTRA_PACKAGE = BuildConfig.APPLICATION_ID + ".plugin.extra.PACKAGE";
     /**
      * Copy of {@link #EXTRA_PACKAGE} that Tasker replaces variables in; the signed original stays.
      */
-    static final String EXTRA_PACKAGE_VALUE = "dev.ukanth.ufirewall.plugin.extra.PACKAGE_VALUE";
-    static final String EXTRA_NETWORK = "dev.ukanth.ufirewall.plugin.extra.NETWORK";
-    static final String EXTRA_PROFILE_NAME = "dev.ukanth.ufirewall.plugin.extra.PROFILE_NAME";
-    static final String EXTRA_ID = "dev.ukanth.ufirewall.plugin.extra.ID";
-    static final String EXTRA_CREATED = "dev.ukanth.ufirewall.plugin.extra.CREATED";
-    static final String EXTRA_CALLER = "dev.ukanth.ufirewall.plugin.extra.CALLER";
-    static final String EXTRA_FORMAT = "dev.ukanth.ufirewall.plugin.extra.FORMAT";
-    static final String EXTRA_SIGNATURE = "dev.ukanth.ufirewall.plugin.extra.SIGNATURE";
+    static final String EXTRA_PACKAGE_VALUE = BuildConfig.APPLICATION_ID + ".plugin.extra.PACKAGE_VALUE";
+    static final String EXTRA_NETWORK = BuildConfig.APPLICATION_ID + ".plugin.extra.NETWORK";
+    static final String EXTRA_PROFILE_NAME = BuildConfig.APPLICATION_ID + ".plugin.extra.PROFILE_NAME";
+    static final String EXTRA_ID = BuildConfig.APPLICATION_ID + ".plugin.extra.ID";
+    static final String EXTRA_CREATED = BuildConfig.APPLICATION_ID + ".plugin.extra.CREATED";
+    static final String EXTRA_CALLER = BuildConfig.APPLICATION_ID + ".plugin.extra.CALLER";
+    static final String EXTRA_FORMAT = BuildConfig.APPLICATION_ID + ".plugin.extra.FORMAT";
+    static final String EXTRA_SIGNATURE = BuildConfig.APPLICATION_ID + ".plugin.extra.SIGNATURE";
 
     // Tasker's plug-in extensions (also understood by some other hosts)
     static final String TASKER_VARIABLE_REPLACE_KEYS = "net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS";

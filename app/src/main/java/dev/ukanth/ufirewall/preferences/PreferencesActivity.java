@@ -19,9 +19,12 @@
  *
  * @author Umakanthan Chandran
  * @version 1.0
+  * Modified by demoshow for AFWall+ TV
  */
 
 package dev.ukanth.ufirewall.preferences;
+
+import dev.ukanth.ufirewall.BuildConfig;
 
 import android.content.Context;
 import android.content.Intent;
@@ -66,8 +69,8 @@ import io.reactivex.rxjava3.disposables.Disposable;
 public class PreferencesActivity extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final boolean ALWAYS_SIMPLE_PREFS = false;
-    public static final String EXTRA_TOOLBAR_TITLE = "dev.ukanth.ufirewall.extra.TOOLBAR_TITLE";
-    public static final String EXTRA_FINISH_ON_BACK = "dev.ukanth.ufirewall.extra.FINISH_ON_BACK";
+    public static final String EXTRA_TOOLBAR_TITLE = BuildConfig.APPLICATION_ID + ".extra.TOOLBAR_TITLE";
+    public static final String EXTRA_FINISH_ON_BACK = BuildConfig.APPLICATION_ID + ".extra.FINISH_ON_BACK";
     private Toolbar mToolBar;
 
     private RxEvent rxEvent;
@@ -408,13 +411,13 @@ public class PreferencesActivity extends PreferenceActivity implements SharedPre
             initTheme();
             recreate();
             Intent broadcastIntent = new Intent();
-            broadcastIntent.setAction("dev.ukanth.ufirewall.theme.REFRESH");
+            broadcastIntent.setAction(BuildConfig.APPLICATION_ID + ".theme.REFRESH");
             ctx.sendBroadcast(broadcastIntent);
         }
 
         if (isRefreshRequired) {
             Intent broadcastIntent = new Intent();
-            broadcastIntent.setAction("dev.ukanth.ufirewall.ui.CHECKREFRESH");
+            broadcastIntent.setAction(BuildConfig.APPLICATION_ID + ".ui.CHECKREFRESH");
             ctx.sendBroadcast(broadcastIntent);
         }
     }

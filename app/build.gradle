@@ -1,16 +1,23 @@
+// Modified by demoshow for AFWall+ TV
 apply plugin: 'com.android.application'
+
+// Release workflow overrides; local builds keep the defaults below.
+def tvVersionCode = (project.findProperty("versionCode") ?: "20261022").toString().toInteger()
+def tvVersionName = (project.findProperty("versionName") ?: "1.0.0-tv").toString()
 
 android {
     namespace 'dev.ukanth.ufirewall'
-    compileSdk 36
+    compileSdk 34
 
     defaultConfig {
         //applicationId "dev.ukanth.ufirewall.donate"
-        applicationId "dev.ukanth.ufirewall"
-        minSdkVersion 23
-        targetSdk 36
-        versionCode 20261004
-        versionName "5.0.0"
+        applicationId "io.github.demoshow.afwalltv"
+        // Resource XML is not manifest-placeholder expanded (e.g. static shortcuts).
+        resValue 'string', 'tv_application_id', applicationId
+        minSdkVersion 24
+        targetSdk 34
+        versionCode tvVersionCode
+        versionName tvVersionName
         buildConfigField 'boolean', 'DONATE', 'false'
         vectorDrawables.useSupportLibrary = true
         ndk {
@@ -35,6 +42,10 @@ android {
 
     testOptions {
         unitTests.returnDefaultValues = true
+        unitTests.includeAndroidResources = true
+        unitTests.all {
+            maxHeapSize = '1g'
+        }
     }
 
     lint {
@@ -55,7 +66,7 @@ android {
 
     configurations.all {
         resolutionStrategy {
-            force 'androidx.core:core:1.15.0'
+            force 'androidx.core:core:1.13.1'
             force 'androidx.activity:activity:1.9.3'
             force 'androidx.annotation:annotation:1.9.1'
         }
@@ -75,7 +86,7 @@ dependencies {
     implementation "androidx.cardview:cardview:1.0.0"
     implementation "androidx.recyclerview:recyclerview:1.3.2"
     implementation "androidx.annotation:annotation:1.9.1"
-    implementation "androidx.core:core:1.15.0"
+    implementation "androidx.core:core:1.13.1"
     implementation "androidx.preference:preference:1.2.1"
     implementation "androidx.legacy:legacy-support-v13:1.0.0"
     implementation "androidx.activity:activity:1.9.3"
@@ -90,6 +101,7 @@ dependencies {
     implementation "dnsjava:dnsjava:3.6.5"
 
     testImplementation "junit:junit:4.13.2"
+    testImplementation "org.robolectric:robolectric:4.17"
     // real org.json for unit tests (the Android one is only stubs there)
     testImplementation "org.json:json:20240303"
 }

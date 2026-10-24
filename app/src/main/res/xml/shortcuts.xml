@@ -1,3 +1,4 @@
+<!-- Modified by demoshow for AFWall+ TV -->
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
     <shortcut
         android:enabled="true"
@@ -8,7 +9,7 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetClass="dev.ukanth.ufirewall.preferences.PreferencesActivity"
-            android:targetPackage="dev.ukanth.ufirewall" >
+            android:targetPackage="@string/tv_application_id" >
             <extra android:name="validate" android:value="yes" />
         </intent>
     </shortcut>
@@ -22,7 +23,7 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetClass="dev.ukanth.ufirewall.activity.LogActivity"
-            android:targetPackage="dev.ukanth.ufirewall">
+            android:targetPackage="@string/tv_application_id">
             <extra android:name="validate" android:value="yes" />
         </intent>
     </shortcut>
@@ -37,7 +38,7 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetClass="dev.ukanth.ufirewall.activity.RulesActivity"
-            android:targetPackage="dev.ukanth.ufirewall" >
+            android:targetPackage="@string/tv_application_id" >
             <extra android:name="validate" android:value="yes" />
         </intent>
     </shortcut>

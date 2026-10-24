@@ -20,6 +20,7 @@
  *
  * @author Rodrigo Zechin Rosauro, Umakanthan Chandran
  * @version 1.1
+  * Modified by demoshow for AFWall+ TV
  */
 
 package dev.ukanth.ufirewall;
@@ -125,6 +126,7 @@ import haibison.android.lockpattern.utils.AlpSettings;
 import kotlin.Suppress;
 
 
+// Modified 2026-10-18: television-only D-pad focus support; original notices retained.
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, OnClickListener, SwipeRefreshLayout.OnRefreshListener,
         RadioGroup.OnCheckedChangeListener {
 
@@ -230,6 +232,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Toolbar toolbar = findViewById(R.id.main_toolbar);
 
         setSupportActionBar(toolbar);
+        if (dev.ukanth.ufirewall.util.TvRemoteNavigation.isTelevision(this)) {
+            getWindow().getDecorView().getViewTreeObserver().addOnGlobalLayoutListener(() ->
+                    dev.ukanth.ufirewall.util.TvRemoteNavigation.prepare(
+                            findViewById(android.R.id.content)));
+        }
 
 
         this.findViewById(R.id.img_wifi).setOnClickListener(this);
@@ -357,7 +364,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @SuppressLint("UnspecifiedRegisterReceiverFlag")
     private void registerUIRefresh() {
-        IntentFilter filter = new IntentFilter("dev.ukanth.ufirewall.ui.CHECKREFRESH");
+        IntentFilter filter = new IntentFilter(BuildConfig.APPLICATION_ID + ".ui.CHECKREFRESH");
         uiRefreshReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -381,7 +388,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @SuppressLint("UnspecifiedRegisterReceiverFlag")
     private void registerThemeIntent() {
 
-        IntentFilter filter = new IntentFilter("dev.ukanth.ufirewall.theme.REFRESH");
+        IntentFilter filter = new IntentFilter(BuildConfig.APPLICATION_ID + ".theme.REFRESH");
         themeRefreshReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TV additions, GPL-3.0-or-later. Modified 2026-10-22. -->
+<resources>
+    <string name="tv_title">AFWall+ TV · 应用联网控制</string>
+    <string name="tv_initial_status">正在读取应用；防火墙不会自动开启</string>
+    <string name="tv_apply">应用规则</string>
+    <string name="tv_disable">停用防火墙</string>
+    <string name="tv_inspect">状态检查</string>
+    <string name="tv_advanced">高级设置</string>
+    <string name="tv_draft_title">有未应用的选择</string>
+    <string name="tv_draft_body">请先应用，或按返回后放弃草稿。高级界面保留原版全部功能。</string>
+    <string name="tv_navigation">↑↓ 选择应用  ·  确认键修改档位  ·  修改后点击“应用规则”才生效</string>
+    <string name="tv_footer">核心 UID 受保护；共享 UID 一起生效。仅内网包含私有网段及发现流量；新增应用沿用高级模式默认策略。</string>
+    <string name="tv_core_badge">核心保护</string>
+    <string name="tv_loading">正在读取应用列表…</string>
+    <string name="tv_load_failed">读取失败</string>
+    <string name="tv_core_title">核心 UID 保护</string>
+    <string name="tv_core_body">此 UID 与系统或维护功能有关，简洁界面不允许封禁。请勿为屏蔽小米统计而封禁整个 UID 1000。</string>
+    <string name="tv_cancel">取消</string>
+    <string name="tv_help">说明</string>
+    <string name="tv_modes_title">三档说明</string>
+    <string name="tv_modes_body">正常联网：不限制。\n仅内网：允许 AFWall+ 的内网/局域网发现规则，阻止 Wi-Fi/有线外网、移动数据和 VPN。\n禁止联网：拒绝应用直接的 LAN/WAN 流量，仍保留引擎允许的回环、DNS或系统代理例外。\n同一 UID 的多个应用一起生效；不能约束能改防火墙的 root 程序。</string>
+    <string name="tv_ok">知道了</string>
+    <string name="tv_apply_title">应用并启用防火墙？</string>
+    <string name="tv_apply_body">需要你在 Magisk/SuperSU 中授予本应用 root。将使用 AFWall+ 原规则引擎，同时处理 IPv4/IPv6。\n\n首次建议只限制一个普通应用。核心 UID 保持放行。保留高级界面的白名单/黑名单模式。请勿同时启用官方 AFWall+ 或其他规则管理器。开机恢复沿用上游行为。</string>
+    <string name="tv_apply_confirm">确认应用</string>
+    <string name="tv_custom_warning">\n\n注意：当前有实际保存的脚本或启用的高级规则，会保留并由原引擎处理，可能影响三档效果。可取消后进入高级设置检查；不要求关闭不存在的开关。</string>
+    <string name="tv_applying">等待 root 授权并应用，请勿退出…</string>
+    <string name="tv_root_denied">没有获得 root；未应用规则</string>
+    <string name="tv_binary_failed">防火墙工具准备失败</string>
+    <string name="tv_applied_title">规则已应用</string>
+    <string name="tv_applied_body">AFWall+ 引擎报告成功。实际 LAN/WAN 拦截效果仍需在本机验证。可随时点“停用防火墙”。</string>
+    <string name="tv_not_applied">未应用</string>
+    <string name="tv_apply_failed">应用失败</string>
+    <string name="tv_old_rules">旧规则</string>
+    <string name="tv_disabled_state">未启用状态</string>
+    <string name="tv_engine_success">引擎报告成功</string>
+    <string name="tv_recovery_failed">失败！规则状态可能不完整，请停用并检查</string>
+    <string name="tv_disable_title">停用本应用的防火墙？</string>
+    <string name="tv_disable_body">调用 AFWall+ 清理自身规则，不清空系统全部防火墙。保存的应用选择仍保留。</string>
+    <string name="tv_disable_confirm">停用</string>
+    <string name="tv_disabling">正在停用…</string>
+    <string name="tv_disabled_title">已停用</string>
+    <string name="tv_disable_failed">停用失败</string>
+    <string name="tv_disabled_body">规则引擎报告已清理本应用规则。</string>
+    <string name="tv_inspecting">正在只读检查 root 和防火墙…</string>
+    <string name="tv_inspect_title">只读状态检查</string>
+    <string name="tv_inspect_failed">检查失败</string>
+    <string name="tv_busy">正在执行操作，请等待完成</string>
+    <string name="tv_discard_title">放弃未应用的选择？</string>
+    <string name="tv_discard">放弃</string>
+    <string name="tv_keep_editing">继续编辑</string>
+    <string name="tv_app_name">AFWall+ TV</string>
+    <string name="tv_enabled">防火墙：已启用</string>
+    <string name="tv_disabled">防火墙：未启用</string>
+    <string name="tv_status">%1$s · %2$d 个 UID 组%3$s%4$s</string>
+    <string name="tv_dirty_suffix"> · 有未应用修改</string>
+    <string name="tv_ipv6_on"> · IPv4 + IPv6</string>
+    <string name="tv_ipv6_off"> · IPv6未启用（下次应用将启用）</string>
+    <string name="tv_shared_uid">共享 UID（%1$d 个包） · %2$s</string>
+    <string name="tv_custom_check_failed">\n\n高级规则检查未完成：%1$s。已有规则不会被删除，可能影响三档效果；不确定时请取消并检查高级设置。</string>
+    <string name="tv_rollback">原错误码：%1$d\n恢复%2$s：%3$s\n%4$s</string>
+    <string name="tv_disable_error">错误码 %1$d；请查看高级规则和日志。</string>
+    <string-array name="tv_modes">
+        <item>正常联网</item>
+        <item>仅内网</item>
+        <item>禁止联网</item>
+        <item>自定义（高级规则）</item>
+    </string-array>
+</resources>

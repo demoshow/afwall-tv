@@ -52,3 +52,24 @@ proguard-project.txt
 copy.sh
 make
 makeclean
+
+# Local signing material and private publishing inputs
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.key
+*.pem
+*.idsig
+keystore.properties
+signing.properties
+.env
+.env.*
+captures/
+build-temp/
+
+# CI release outputs
+/afwall-tv-*.apk
+/afwall-tv-*-source.zip
+/SHA256SUMS
+/release-notes.md

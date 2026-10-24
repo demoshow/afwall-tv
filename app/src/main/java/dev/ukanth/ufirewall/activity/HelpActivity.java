@@ -1,3 +1,4 @@
+/* Modified by demoshow for AFWall+ TV */
 package dev.ukanth.ufirewall.activity;
 
 import android.content.ActivityNotFoundException;
@@ -18,6 +19,7 @@ import dev.ukanth.ufirewall.R;
 import dev.ukanth.ufirewall.util.G;
 import dev.ukanth.ufirewall.util.ThemeHelper;
 
+// Modified 2026-10-22: identify the TV derivative and route its source/issues correctly.
 public class HelpActivity extends AppCompatActivity {
 
     @Override
@@ -43,7 +45,7 @@ public class HelpActivity extends AppCompatActivity {
     private void setupContent() {
         String version = BuildConfig.VERSION_NAME;
         TextView titleText = findViewById(R.id.afwall_title);
-        String versionText = getString(R.string.app_name) + " (v" + version + ")";
+        String versionText = getString(R.string.tv_app_name) + " (v" + version + ")";
         if (G.isDonate() || G.isDoKey(this)) {
             versionText = versionText + " (Donate) " + getString(R.string.donate_thanks) + " :)";
         }
@@ -56,8 +58,8 @@ public class HelpActivity extends AppCompatActivity {
         }
 
         link(R.id.help_link_wiki_row, "https://github.com/ukanth/afwall/wiki");
-        link(R.id.help_link_source_row, "https://github.com/ukanth/afwall");
-        link(R.id.help_link_issues_row, "https://github.com/ukanth/afwall/issues");
+        link(R.id.help_link_source_row, "https://github.com/demoshow/afwall-tv");
+        link(R.id.help_link_issues_row, "https://github.com/demoshow/afwall-tv/issues");
     }
 
     private void link(int rowId, String url) {
