@@ -36,9 +36,17 @@ checksum。Release APK 由本项目维护者签名，不是 AFWall+ 官方构建
 修改选档只是草稿，明确确认应用并授予 root 后才生效；保留既有高级模式、脚本、
 直接规则和 Tor 设置。
 
+## 品牌
+
+<img src="docs/branding/app-icon-1024.png" width="160" alt="AFWall+ TV 应用图标">
+<img src="docs/branding/tv-banner-640x360.png" width="640" alt="AFWall+ TV 电视横幅">
+
+应用图标和电视横幅为本非官方 TV 版原创品牌资源，随应用以 GPL-3.0-or-later
+发布；源码和生成脚本见 [docs/branding](docs/branding/README.md)。
+
 ## 截图
 
-以下为 CM311-1（S905L3，Android 9，系统语言中文）上 AFWall+ TV 1.0.0-tv 的实机截图：
+以下为 CM311-1（S905L3，Android 9，系统语言中文）上 AFWall+ TV 1.0.1-tv 的实机截图：
 
 ![电视端应用策略列表](docs/images/tv-home-zh-CN.png)
 

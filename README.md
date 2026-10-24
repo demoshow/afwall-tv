@@ -38,10 +38,19 @@ possible. [Upstream documentation](https://github.com/ukanth/afwall/wiki) ·
 Editing creates a draft. Only an explicit apply confirmation and root grant
 activate rules. Advanced mode, scripts, direct rules and Tor settings are retained.
 
+## Branding
+
+<img src="docs/branding/app-icon-1024.png" width="160" alt="AFWall+ TV app icon">
+<img src="docs/branding/tv-banner-640x360.png" width="640" alt="AFWall+ TV TV banner">
+
+The app icon and TV banner are original project branding for this unofficial
+TV port, distributed under GPL-3.0-or-later with the application. Their source
+and generator are in [docs/branding](docs/branding/README.md).
+
 ## Screenshots
 
 Real captures from a CM311-1 (S905L3, Android 9, system language Chinese) running
-AFWall+ TV 1.0.0-tv:
+AFWall+ TV 1.0.1-tv:
 
 ![AFWall+ TV policy list](docs/images/tv-home-zh-CN.png)
 

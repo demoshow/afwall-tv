@@ -168,6 +168,7 @@ jobs:
           ## Changes / 变更
 
           - TV-first three-policy UI (normal / LAN-only / blocked) and D-pad navigation.
+          - Original app icon and TV banner (see docs/branding).
           - TV identity: application ID `io.github.demoshow.afwalltv`, Java namespace unchanged.
           - English/Chinese resources, tests, documentation and release automation.
 

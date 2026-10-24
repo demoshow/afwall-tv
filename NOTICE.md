@@ -21,6 +21,10 @@ English/Chinese Android resources, additional tests, compatible build settings,
 and public-facing documentation. The firewall engine and its limitations remain
 derived from upstream.
 
+The AFWall+ TV app icon and TV banner are original project branding for this
+unofficial derivative, distributed under GPL-3.0-or-later; see `docs/branding/`
+for the sources and generator.
+
 This repository preserves the upstream AFWall+ Git history: the TV changes are
 additional commits on top of the recorded upstream snapshot, and the repository
 is not a GitHub-network fork. Preserving history does not change the licensing
