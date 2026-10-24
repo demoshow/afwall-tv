@@ -46,7 +46,7 @@ checksum。Release APK 由本项目维护者签名，不是 AFWall+ 官方构建
 
 ## 截图
 
-以下为 CM311-1（S905L3，Android 9，系统语言中文）上 AFWall+ TV 1.0.1-tv 的实机截图：
+以下为 CM311-1（S905L3，Android 9，系统语言中文）上 AFWall+ TV 1.0.2-tv 的实机截图：
 
 ![电视端应用策略列表](docs/images/tv-home-zh-CN.png)
 

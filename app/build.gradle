@@ -2,8 +2,8 @@
 apply plugin: 'com.android.application'
 
 // Release workflow overrides; local builds keep the defaults below.
-def tvVersionCode = (project.findProperty("versionCode") ?: "20261024").toString().toInteger()
-def tvVersionName = (project.findProperty("versionName") ?: "1.0.1-tv").toString()
+def tvVersionCode = (project.findProperty("versionCode") ?: "20261025").toString().toInteger()
+def tvVersionName = (project.findProperty("versionName") ?: "1.0.2-tv").toString()
 
 android {
     namespace 'dev.ukanth.ufirewall'

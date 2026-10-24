@@ -50,7 +50,7 @@ and generator are in [docs/branding](docs/branding/README.md).
 ## Screenshots
 
 Real captures from a CM311-1 (S905L3, Android 9, system language Chinese) running
-AFWall+ TV 1.0.1-tv:
+AFWall+ TV 1.0.2-tv:
 
 ![AFWall+ TV policy list](docs/images/tv-home-zh-CN.png)
 
