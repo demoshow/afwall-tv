@@ -21,10 +21,6 @@ English/Chinese Android resources, additional tests, compatible build settings,
 and public-facing documentation. The firewall engine and its limitations remain
 derived from upstream.
 
-The AFWall+ TV app icon and TV banner are original project branding for this
-unofficial derivative, distributed under GPL-3.0-or-later; see `docs/branding/`
-for the sources and generator.
-
 This repository preserves the upstream AFWall+ Git history: the TV changes are
 additional commits on top of the recorded upstream snapshot, and the repository
 is not a GitHub-network fork. Preserving history does not change the licensing
@@ -88,7 +84,7 @@ TV-specific additions include:
 - `app/src/main/res/values/tv_strings.xml`, `values-zh/tv_strings.xml`,
   `values-b+zh+Hant/tv_strings.xml` — bilingual TV resources and Chinese-region fallback
   (the latter two paths are also under `app/src/main/res/`).
-- `app/src/main/res/drawable/tv_banner.xml`, `tv_remote_focus.xml`, and
+- `app/src/main/res/drawable-xhdpi/tv_banner.png`, `drawable/tv_remote_focus.xml`, and
   `app/src/main/res/values/tv_remote_ids.xml` — TV banner and focus resources.
 - `app/src/test/java/dev/ukanth/ufirewall/tv/` — policy, localization and application-identity tests.
 - `scripts/verify_tv_resources.py` and project documentation — translation checks,

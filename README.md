@@ -1,4 +1,8 @@
-# AFWall+ TV
+<p align="center">
+  <img src="docs/icon.png" width="128" height="128" alt="AFWall+ TV icon">
+</p>
+
+<h1 align="center">AFWall+ TV</h1>
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
@@ -37,15 +41,6 @@ possible. [Upstream documentation](https://github.com/ukanth/afwall/wiki) ·
 
 Editing creates a draft. Only an explicit apply confirmation and root grant
 activate rules. Advanced mode, scripts, direct rules and Tor settings are retained.
-
-## Branding
-
-<img src="docs/branding/app-icon-1024.png" width="160" alt="AFWall+ TV app icon">
-<img src="docs/branding/tv-banner-640x360.png" width="640" alt="AFWall+ TV TV banner">
-
-The app icon and TV banner are original project branding for this unofficial
-TV port, distributed under GPL-3.0-or-later with the application. Their source
-and generator are in [docs/branding](docs/branding/README.md).
 
 ## Screenshots
 
@@ -107,8 +102,12 @@ cd afwall-tv
 python3 scripts/verify_tv_resources.py
 ```
 
-Release output is unsigned; manage your own private signing material outside
-the repository. First builds/tests download dependencies and Android test artifacts.
+Local `assembleRelease` output is unsigned; manage your own private signing
+material outside the repository. The signed APK, `SHA256SUMS` and matching
+source archive are built by the release workflow and published on the
+[Releases](https://github.com/demoshow/afwall-tv/releases) page (see
+[Download](#download--下载) and [docs/CI-SIGNING.md](docs/CI-SIGNING.md)).
+First builds/tests download dependencies and Android test artifacts.
 Inherited native helpers and their source/terms are listed in
 [THIRD_PARTY.md](THIRD_PARTY.md); byte-reproducible native builds are not claimed.
 JVM/resource tests do not validate physical remotes, root dialogs, boot behavior

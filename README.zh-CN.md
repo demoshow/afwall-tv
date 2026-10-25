@@ -1,4 +1,8 @@
-# AFWall+ TV
+<p align="center">
+  <img src="docs/icon.png" width="128" height="128" alt="AFWall+ TV 应用图标">
+</p>
+
+<h1 align="center">AFWall+ TV</h1>
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
@@ -35,14 +39,6 @@ checksum。Release APK 由本项目维护者签名，不是 AFWall+ 官方构建
 
 修改选档只是草稿，明确确认应用并授予 root 后才生效；保留既有高级模式、脚本、
 直接规则和 Tor 设置。
-
-## 品牌
-
-<img src="docs/branding/app-icon-1024.png" width="160" alt="AFWall+ TV 应用图标">
-<img src="docs/branding/tv-banner-640x360.png" width="640" alt="AFWall+ TV 电视横幅">
-
-应用图标和电视横幅为本非官方 TV 版原创品牌资源，随应用以 GPL-3.0-or-later
-发布；源码和生成脚本见 [docs/branding](docs/branding/README.md)。
 
 ## 截图
 
@@ -97,8 +93,11 @@ cd afwall-tv
 python3 scripts/verify_tv_resources.py
 ```
 
-Release 默认未签名，私有签名材料由构建者在仓库之外管理。首次构建和测试需要
-下载依赖及 Android 测试资源。继承的原生工具与源码/授权见
+本地 `assembleRelease` 默认未签名，私有签名材料由构建者在仓库之外管理；签名 APK、
+`SHA256SUMS` 和对应源码包由 release workflow 生成并发布在
+[Releases](https://github.com/demoshow/afwall-tv/releases) 页面（见上方“下载”和
+[docs/CI-SIGNING.md](docs/CI-SIGNING.md)）。首次构建和测试需要下载依赖及 Android
+测试资源。继承的原生工具与源码/授权见
 [第三方说明](THIRD_PARTY.md)，不声称位级可复现。JVM/资源测试不能代替实体
 遥控器、root 对话框、开机行为和真实隔离验证，须执行[人工清单](docs/TESTING.md)。
 
